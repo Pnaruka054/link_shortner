@@ -1,0 +1,15 @@
+.loading-container {
+    background: linear-gradient(135deg, #f0f0f0 25%, #e0e0e0 100%);
+    transition: background 0.5s ease-in-out;
+}
+
+.spinner-icon {
+    color: #007bff; /* Bootstrap primary color */
+    font-size: 3rem; /* Increased size */
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

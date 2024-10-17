@@ -4,6 +4,7 @@ import NavBarAdmin from "../Nav_Bar_admin/nav_bar_admin";
 import Footer from "../../Footer/footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import LoadingPage from "../../Loading_page/loading_page";
 
 const HomePageAdmin = (props) => {
   const [userData, setUserData] = useState(undefined);
@@ -57,7 +58,9 @@ const HomePageAdmin = (props) => {
     setActiveMenu(activeMenu === menuIndex ? null : menuIndex);
   };
 
-  if (userData) {
+  if (!userData) {
+    return <LoadingPage />
+  }
     return (
       <div>
         <div className="container-fluid">
@@ -184,7 +187,7 @@ const HomePageAdmin = (props) => {
         </div>
       </div>
     );
-  }
+
 };
 
 export default HomePageAdmin;
