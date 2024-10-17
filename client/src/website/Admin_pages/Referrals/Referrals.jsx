@@ -1,4 +1,4 @@
-import "./referrals.css"; // Assuming you have a CSS file for styling
+import "./Referrals.css"; 
 import HomePageAdmin from '../Home_page_admin/home_page_admin';
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
