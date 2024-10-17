@@ -1,5 +1,5 @@
 import Nav_Bar from '../Nav_Bar/nav_bar';
-import './Page_Not_Found.css';
+import './page_Not_Found.css';
 
 const Page_Not_Found = () => {
     return (
