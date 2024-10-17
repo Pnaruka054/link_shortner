@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './change_Password.css'; // Optional CSS for additional styling
+import './change_password.css';
 import HomePageAdmin from '../Home_page_admin/home_page_admin';
 
 const ChangePassword = () => {
