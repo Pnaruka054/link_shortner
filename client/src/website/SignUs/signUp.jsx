@@ -114,7 +114,7 @@ const Signup = ({ referral_status }) => {
     }
 		try {
 			if (authResult["code"]) {
-				let response = await axios.get(`http://localhost:8000/api/user_signUp_login_google?google_code=${authResult.code}&referral_id_signup=${referral_track[0]}&date=${referral_track[1]}`); 
+				let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user_signUp_login_google?google_code=${authResult.code}&referral_id_signup=${referral_track[0]}&date=${referral_track[1]}`); 
         if(response){
           navigation('/member/dashboard')
           localStorage.setItem('jwtToken_state', response.data.jwtToken_msg)

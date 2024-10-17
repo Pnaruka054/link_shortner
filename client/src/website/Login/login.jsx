@@ -70,8 +70,8 @@ const Login = () => {
 
   const responseGoogle = async (authResult) => {
     try {
-      if (authResult["code"]) {
-        let response = await axios.get(`http://localhost:8000/api/user_signUp_login_google?google_code=${authResult.code}&referral_id_signup=undefined&date=undefined`);
+      if (authResult["code"]) { 
+        let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user_signUp_login_google?google_code=${authResult.code}&referral_id_signup=undefined&date=undefined`);
         if (response) {
           navigation('/member/dashboard')
           localStorage.setItem('jwtToken_state', response.data.jwtToken_msg)
@@ -80,6 +80,7 @@ const Login = () => {
         throw new Error(authResult);
       }
     } catch (error) {
+      console.log(error);
       setError_state([error.response.data.error_msg]);
       setTimeout(() => {
         setError_state("");

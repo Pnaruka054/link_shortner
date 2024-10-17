@@ -168,12 +168,12 @@ const Statistics = () => {
                 <div id='alert_message_div'>
                     {error.length > 0 && <div className="alert alert-danger"></div>}
                 </div>
-                <div id="check_email_verify_error_div" class="alert alert-warning alert-dismissible fade show d-none" role="alert">
+                <div id="check_email_verify_error_div" className="alert alert-warning alert-dismissible fade show d-none" role="alert">
                 <i className="fa-solid fa-triangle-exclamation"></i> Your email is not verified -
                     <span style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }} onClick={handleVerifyClick}>
                         click here
                     </span>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <form className="bg-white border border-success p-3 mt-3" onSubmit={handleSubmit}>
                     <div className="mb-3">
