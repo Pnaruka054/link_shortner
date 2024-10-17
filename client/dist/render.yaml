@@ -1,0 +1,6 @@
+version: 1
+static:
+  path: ./dist
+  routes:
+    - src: /.*
+      dest: /index.html
