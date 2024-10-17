@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Statistics.css";
 import HomePageAdmin from "../Home_page_admin/home_page_admin";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Statistics = () => {
     const [selectedMonth, setSelectedMonth] = useState("September 2024");
