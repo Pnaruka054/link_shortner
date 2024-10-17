@@ -16,7 +16,7 @@ const Nav_Bar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src="../assets/logo.png" alt="CashShrink Logo" />
+            <img src="Logo.png" alt="CashShrink Logo" />
           </Link>
           <button
             className="navbar-toggler"
