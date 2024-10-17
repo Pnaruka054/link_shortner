@@ -1,0 +1,8 @@
+.tooltip-custom {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}

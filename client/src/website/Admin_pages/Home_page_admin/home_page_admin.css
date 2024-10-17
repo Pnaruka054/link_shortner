@@ -1,0 +1,28 @@
+#home_page_admin_content_section {
+    height: 94.2vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #ecf0f5;
+}
+
+.rotate-icon {
+    transition: transform 0.3s ease;
+    transform: rotate(-90deg);
+}
+
+.rotate-icon.reverse {
+    transform: rotate(90deg);
+}
+
+.home_side_menu_treeview_menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden; /* Ensure hidden content doesn't take space */
+  }
+  
+  .home_side_menu_treeview_menu.show {
+    max-height: 200px; /* Adjust as needed */
+    opacity: 1;
+  }
+  

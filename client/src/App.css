@@ -1,0 +1,34 @@
+.pointer {
+    cursor: pointer;
+}
+
+.min-width-300 {
+    min-width: 300px;
+}
+
+#home_page_admin_content_section::-webkit-scrollbar {
+    width: 10px;
+    background-color: #bebebe;
+}
+
+#home_page_admin_content_section::-webkit-scrollbar-thumb {
+    background-color: rgb(105, 105, 105);
+    border-radius: 10px;
+}
+
+.alert{
+    font-size: smaller;
+}
+
+#alert_message_div {
+    position: absolute;
+    bottom: 0;
+    right: 1%;
+}
+
+@media (min-width: 992px) { /* lg breakpoint */
+    .full-height-lg {
+        height: 100vh;
+        margin-top: 5px;
+    }
+}

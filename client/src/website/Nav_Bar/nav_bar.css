@@ -1,0 +1,19 @@
+.navbar-brand img{
+    width: 150px;
+}
+
+.navbar-nav .nav-link {
+    color: white; 
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #035be0; 
+    color: white; 
+    border-radius: 5px;
+}
+
+.navbar-toggler{
+    color: white;
+    background-color: white;
+}
+

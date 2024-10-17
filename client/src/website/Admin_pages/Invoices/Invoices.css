@@ -1,0 +1,5 @@
+.action-buttons {
+    display: flex; /* Use flexbox to keep buttons in a row */
+    gap: 0.5rem;  /* Adjust space between buttons */
+    white-space: nowrap; /* Prevent wrapping */
+}

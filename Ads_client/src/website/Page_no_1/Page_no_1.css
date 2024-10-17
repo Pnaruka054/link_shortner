@@ -1,0 +1,12 @@
+/* src/components/Page_no_1.css */
+
+.ad-box {
+    background-color: #f8f9fa; /* Light background for ad boxes */
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.ad-box:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
