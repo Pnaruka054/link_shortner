@@ -44,21 +44,21 @@
 }
 
 #home_hero_first_section {
-    background-image: url("home_hero_img1.png");
+    background-image: url("../assets/home_hero_img1.png");
     width: 268px;
     height: 108px;
     margin: auto;
 }
 
 #home_hero_second_section {
-    background-image: url("home_hero_img2.png");
+    background-image: url("../assets/home_hero_img2.png");
     width: 290px;
     height: 100px;
     margin: auto;
 }
 
 #home_hero_third_section {
-    background-image: url("home_hero_img3.png");
+    background-image: url("../assets/home_hero_img3.png");
     width: 200px;
     height: 171px;
     margin: auto;
@@ -75,21 +75,21 @@
 }
 
 #home_first_section {
-    background: url("home_icons.png") 0 -620px;
+    background: url("../assets/home_icons.png") 0 -620px;
     width: 170px;
     height: 130px;
     margin: auto;
 }
 
 #home_second_section {
-    background: url("home_icons.png") 0 -755px;
+    background: url("../assets/home_icons.png") 0 -755px;
     width: 170px;
     height: 140px;
     margin: auto;
 }
 
 #home_third_section {
-    background: url("home_icons.png") 45px -895px;
+    background: url("../assets/home_icons.png") 45px -895px;
     background-repeat: no-repeat;
     width: 200px;
     height: 140px;
@@ -152,39 +152,39 @@
 
 
 #home_first_first_pair {
-    background: url("home_icons.png") 10px -0px;
+    background: url("../assets/home_icons.png") 10px -0px;
 }
 
 #home_first_second_pair {
-    background: url("home_icons.png") 10px -70px;
+    background: url("../assets/home_icons.png") 10px -70px;
 }
 
 #home_first_third_pair {
-    background: url("home_icons.png") 5px -140px;
+    background: url("../assets/home_icons.png") 5px -140px;
 }
 
 #home_second_first_pair {
-    background: url("home_icons.png") 5px -210px;
+    background: url("../assets/home_icons.png") 5px -210px;
 }
 
 #home_second_second_pair {
-    background: url("home_icons.png") 5px -275px;
+    background: url("../assets/home_icons.png") 5px -275px;
 }
 
 #home_second_third_pair {
-    background: url("home_icons.png") 5px -345px;
+    background: url("../assets/home_icons.png") 5px -345px;
 }
 
 #home_third_first_pair {
-    background: url("home_icons.png") 15px -410px;
+    background: url("../assets/home_icons.png") 15px -410px;
 }
 
 #home_third_second_pair {
-    background: url("home_icons.png") 5px -480px;
+    background: url("../assets/home_icons.png") 5px -480px;
 }
 
 #home_third_third_pair {
-    background: url("home_icons.png") 15px -550px;
+    background: url("../assets/home_icons.png") 15px -550px;
 }
 
 #faq_downline {
