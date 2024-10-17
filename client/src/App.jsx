@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./website/Home_page/home";
 import Login from "./website/Login/login";
-import Signup from "./website/SignUs/signUs";
+import Signup from "./website/SignUs/signUp";
 import PrivacyPolicy from "./website/Privacy_Policy/privacy_policy";
 import TermsOfUse from "./website/Terms_of_Use/terms_of_use";
 import DMCA from "./website/DMCA/dmca";
