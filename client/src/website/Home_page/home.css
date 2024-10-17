@@ -3,7 +3,7 @@
 }
 
 #home_hero_bg {
-    background-image: url("../../../public/hero_Background.jpg");
+    background-image: url("../assets/hero_Background.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: bottom center;
