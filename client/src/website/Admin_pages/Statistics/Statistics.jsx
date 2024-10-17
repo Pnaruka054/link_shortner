@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./statistics.css";
+import "./Statistics.css";
 import HomePageAdmin from "../Home_page_admin/home_page_admin";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
