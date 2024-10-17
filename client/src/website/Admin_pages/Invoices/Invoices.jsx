@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./invoices.css"; // Assuming you have a CSS file for styling
+import "./Invoices.css";
 import HomePageAdmin from '../Home_page_admin/home_page_admin';
 import axios from 'axios';
 
