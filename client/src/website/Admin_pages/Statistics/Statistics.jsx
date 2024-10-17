@@ -162,7 +162,7 @@ const Statistics = () => {
                 <div className="d-flex justify-content-between">
                     <p className="fs-4">Dashboard</p>
                     <p onClick={handleLogOut} type="button" className="btn btn-outline-danger">
-                        {logOut_btn_process_state ? "LogOut" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+                        {logOut_btn_process_state ? "LogOut" : <i className="fa-solid fa-spinner fa-spin"></i>}
                     </p>
                 </div>
                 <div id='alert_message_div'>
@@ -196,7 +196,7 @@ const Statistics = () => {
                         />
                     </div>
                     <button type="submit" disabled={!short_btn_desable_state} className={`btn ${!submit_process_state ? "btn-secondary" : "btn-danger"}`}>
-                        {submit_process_state ? "Shorten" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+                        {submit_process_state ? "Shorten" : <i className="fa-solid fa-spinner fa-spin"></i>}
                     </button>
                     {error && <div style={{ marginBottom: "-4px" }} className="alert alert-danger mt-3 p-1">{error}</div>}
                     <div className={`shortened-url-container ${shortenedUrlVisible ? 'visible' : ''}`}>

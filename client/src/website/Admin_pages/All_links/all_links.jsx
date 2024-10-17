@@ -136,7 +136,7 @@ const AllLinks = () => {
                                                 <input type="hidden" name="_csrfToken" autoComplete="off" value="your_csrf_token_here" />
                                             </form>
                                             <a href="#" disabled={!hide_process_state} className={`btn ${!hide_process_state ? "btn-secondary" : "btn-danger"} mx-2 btn-sm`} onClick={() => Hide_url_btn(link.shortURL_ID)}>
-                                                {hide_process_state ? "Hide" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+                                                {hide_process_state ? "Hide" : <i className="fa-solid fa-spinner fa-spin"></i>}
                                             </a>
                                         </div>
                                     </div>

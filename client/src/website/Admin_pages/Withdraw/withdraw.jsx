@@ -159,7 +159,7 @@ const Withdraw = () => {
                     <div className="box-body">
                         <div className="text-center">
                             <button disabled={!submit_process_state} className={`btn ${!submit_process_state ? "btn-secondary" : "btn-primary"} btn-success btn-lg`} onClick={handleWithdraw}>
-                                {submit_process_state ? "Withdraw" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+                                {submit_process_state ? "Withdraw" : <i className="fa-solid fa-spinner fa-spin"></i>}
                             </button>
                         </div>
                         <hr />

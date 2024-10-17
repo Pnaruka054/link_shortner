@@ -100,7 +100,7 @@ const ChangeEmail = () => {
               />
             </div>
             <button type="submit" disabled={!submitProcess} className={`btn ${!submitProcess ? "btn-secondary" : "btn-primary"} mb-md-auto mb-4 w-100`}>
-              {submitProcess ? "Change Email" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+              {submitProcess ? "Change Email" : <i className="fa-solid fa-spinner fa-spin"></i>}
             </button>
           </form>
         </div>

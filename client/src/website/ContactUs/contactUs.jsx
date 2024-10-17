@@ -104,7 +104,7 @@ const ContactUs = ({ style }) => {
               </label>
             </div>
             <button type="submit" disabled={!submit_process_state} className={`btn ${!submit_process_state ? "btn-secondary" : "btn-primary"} w-100 mb-5`}>
-              {submit_process_state ? "Send Message" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+              {submit_process_state ? "Send Message" : <i className="fa-solid fa-spinner fa-spin"></i>}
             </button>
           </form>
           <div className="mb-5 fst-italic">

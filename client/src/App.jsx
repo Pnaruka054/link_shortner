@@ -28,7 +28,7 @@ import VerifyChangeEmail from "./website/Admin_pages/Change_email/verify_change_
 
 function App() {
   return (
-    <>
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -62,7 +62,7 @@ function App() {
           <Route path="/*" element={<Page_Not_Found />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

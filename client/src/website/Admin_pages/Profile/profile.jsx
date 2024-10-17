@@ -275,7 +275,7 @@ const Profile = () => {
             className={`btn ${!submit_process_state ? "btn-secondary" : "btn-primary"} mt-3`}
             type="submit"
           >
-            {submit_process_state ? "Submit" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+            {submit_process_state ? "Submit" : <i className="fa-solid fa-spinner fa-spin"></i>}
           </button>
         </form>
       </div>

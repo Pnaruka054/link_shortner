@@ -118,7 +118,7 @@ const ChangePassword = () => {
               disabled={!submitProcess}
               className={`btn ${!submitProcess ? "btn-secondary" : "btn-primary"} w-100 mb-md-auto mb-4`}
             >
-              {submitProcess ? "Change Password" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+              {submitProcess ? "Change Password" : <i className="fa-solid fa-spinner fa-spin"></i>}
             </button>
           </form>
         </div>

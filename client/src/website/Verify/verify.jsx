@@ -166,7 +166,7 @@ const Verify = () => {
                     </div>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <button style={{ width: "40%" }} type="submit" disabled={!submit_process_state} className={`btn ${!submit_process_state ? "btn-secondary" : "btn-primary"}`}>
-                            {submit_process_state ? "Verify" : <i className="fa-sharp-duotone fa-solid fa-loader fa-spin-pulse"></i>}
+                            {submit_process_state ? "Verify" : <i className="fa-solid fa-spinner fa-spin"></i>}
                         </button>
                         <button
                             style={{ width: "40%" }}
