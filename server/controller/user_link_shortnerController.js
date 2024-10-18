@@ -11,14 +11,25 @@ let shortURL_ID_genrater = () => {
     return code;
 }
 function getClientIp(req) {
-    let ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.ip;
+    // X-Forwarded-For header ko check karein
+    let ipAddress = req.headers['x-forwarded-for'];
+    
+    if (ipAddress) {
+        // Agar multiple IPs hain, to pehla IP lo (jo asli client ko represent karta hai)
+        ipAddress = ipAddress.split(',')[0].trim();
+    } else {
+        // Agar header nahi hai, to connection se IP lo
+        ipAddress = req.connection.remoteAddress || req.ip;
+    }
+
+    // IPv6 format se IPv4 mein convert karna
     if (ipAddress && ipAddress.startsWith('::ffff:')) {
         ipAddress = ipAddress.split(':').pop();
     }
+
+    // Localhost ko handle karna
     return ipAddress === '::1' ? '127.0.0.1' : ipAddress;
 }
-
-
 
 let longurl_to_short_post = async (req, res) => {
     try {

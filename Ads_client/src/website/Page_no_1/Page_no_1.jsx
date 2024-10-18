@@ -25,7 +25,7 @@ const PageNo1 = () => {
             }
         };
     
-        fetchData();
+        fetchData(); 
     }, [id]);
 
     useEffect(() => {
