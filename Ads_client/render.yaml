@@ -1,0 +1,7 @@
+version: 1
+staticSites:
+  - name: your-site-name
+    publishDir: ./dist
+    rewrites:
+      - source: /*
+        destination: /index.html
