@@ -53,7 +53,7 @@ const PageNo3 = () => {
 
     const database_shortURL_ID_put = async () => { 
         try {
-            let response = await axios.put(`${import.meta.env.VITE_SERVER_URL}/linkShort/shortURL_third_page_first_btn_click_put`);
+            let response = await axios.put(`${import.meta.env.VITE_SERVER_URL}/linkShort/shortURL_third_page_first_btn_click_put?shortID=${id}`);
             console.log(response);
         } catch (error) {
             console.log(error);
