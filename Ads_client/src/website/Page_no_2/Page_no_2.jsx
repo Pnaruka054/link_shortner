@@ -74,7 +74,7 @@ const PageNo2 = () => {
         return () => clearInterval(timer);
     }, [linkButtonClicked1]);
 
-    const handleGetLinkClick = (e) => {
+    const handleGetLinkClick = (e) => { 
         setLinkButtonClicked2(true)
         const fetchData = async () => {
             try {

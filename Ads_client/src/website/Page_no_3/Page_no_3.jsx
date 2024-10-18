@@ -51,9 +51,9 @@ const PageNo3 = () => {
         }
     }, [short_data_traker]);
 
-    const database_shortURL_ID_put = async () => {
+    const database_shortURL_ID_put = async () => { 
         try {
-            let response = await axios.put(`${import.meta.env.VITE_SERVER_URL}/linkShort/shortURL_third_page_first_btn_click_put?shortID=${id}`);
+            let response = await axios.put(`${import.meta.env.VITE_SERVER_URL}/linkShort/shortURL_third_page_first_btn_click_put`);
             console.log(response);
         } catch (error) {
             console.log(error);
