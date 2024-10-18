@@ -82,7 +82,7 @@ const PageNo3 = () => {
                 <div id='page_controller'>
                     <p>Please wait {seconds} seconds</p>
                     <button onClick={database_shortURL_ID_put} className="btn btn-secondary mb-3" disabled={isDisabled}>
-                        <a style={{ textDecoration: "none", color: "white" }} href={longURL}>Click Here To Continue</a>
+                        <a onClick={database_shortURL_ID_put} style={{ textDecoration: "none", color: "white" }} href={longURL}>Click Here To Continue</a>
                     </button>
                 </div>
                 {/* Banner Ads 300X100 */}
