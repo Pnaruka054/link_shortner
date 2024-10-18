@@ -12,8 +12,8 @@ const Nav_Bar = () => {
     }
   }, []);
   return (
-    <div className="relative">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div className="relative" style={{zIndex:1}}>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary" style={{position: "fixed", top: 0, right: 0, left: 0, zIndex: 1}}>
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src="Logo.png" alt="CashShrink Logo" />

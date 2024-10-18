@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import Nav_Bar from '../Nav_Bar/nav_bar';
 import { useGoogleLogin } from "@react-oauth/google";
+import LoadingDark from '../Loading_dark/loading_dark';
 
 const Signup = ({ referral_status }) => {
   let { id } = useParams();
   const jwtToken_state = localStorage.getItem('jwtToken_state');
   const [dashboard, setDashboard] = useState(false);
+  let [process_dark_state, setProcess_dark_state] = useState(false)
+
 
   useEffect(() => {
     if (jwtToken_state) {
@@ -123,7 +126,9 @@ const Signup = ({ referral_status }) => {
 				console.log(authResult);
 				throw new Error(authResult);
 			}
+      setProcess_dark_state(false)
 		} catch (error) {
+      setProcess_dark_state(false)
       if (typeof (error.response.data.error_msg) === 'object') {
         let error_array = [];
         for (let a of error.response.data.error_msg) {
@@ -152,6 +157,7 @@ const Signup = ({ referral_status }) => {
   const handleGoogleSignUp = async (e) => {
     e.preventDefault();
     googleSignup(); 
+    setProcess_dark_state(true)
   };
   
 
@@ -161,6 +167,7 @@ const Signup = ({ referral_status }) => {
 
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center">
+            {process_dark_state && <LoadingDark />}
       <div>
         <Nav_Bar />
       </div>

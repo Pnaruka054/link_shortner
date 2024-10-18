@@ -4,6 +4,7 @@ import Nav_Bar from '../Nav_Bar/nav_bar';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useGoogleLogin } from "@react-oauth/google";
+import LoadingDark from '../Loading_dark/loading_dark';
 
 
 const Login = () => {
@@ -11,6 +12,7 @@ const Login = () => {
   const [password_state, setPassword_state] = useState('');
   const [rememberMe_state, setRememberMe_state] = useState(false);
   let [submit_process_state, setSubmit_process_state] = useState(true)
+  let [process_dark_state, setProcess_dark_state] = useState(false)
   let [error_state, setError_state] = useState('')
   const jwtToken_state = localStorage.getItem('jwtToken_state');
   const [dashboard, setDashboard] = useState(false);
@@ -76,10 +78,12 @@ const Login = () => {
           navigation('/member/dashboard')
           localStorage.setItem('jwtToken_state', response.data.jwtToken_msg)
         }
+        setProcess_dark_state(false)
       } else {
         throw new Error(authResult);
       }
     } catch (error) {
+      setProcess_dark_state(false)
       console.log(error);
       setError_state([error.response.data.error_msg]);
       setTimeout(() => {
@@ -97,6 +101,7 @@ const Login = () => {
   const handleGoogleLogin = async (e) => {
     e.preventDefault();
     googleLogin();
+    setProcess_dark_state(true)
   };
 
   if (dashboard) {
@@ -105,6 +110,7 @@ const Login = () => {
 
   return (
     <div className="container vh-100 d-flex align-items-center justify-content-center">
+      {process_dark_state && <LoadingDark />}
       <div>
         <Nav_Bar />
       </div>
