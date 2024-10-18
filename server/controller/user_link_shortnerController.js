@@ -4,7 +4,11 @@ const user_signUp_data = require('../model/user_SignUp_Model')
 const UserIPRecord = require('../model/userIp_records')
 
 let shortURL_ID_genrater = () => {
-    return crypto.randomBytes(4).toString('hex');
+    let code;
+    do {
+        code = crypto.randomBytes(4).toString('hex');
+    } while (/\d$/.test(code))
+    return code;
 }
 function getClientIp(req) {
     let ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress || req.ip;
