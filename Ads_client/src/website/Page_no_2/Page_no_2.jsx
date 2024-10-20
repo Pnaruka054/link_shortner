@@ -90,13 +90,6 @@ const PageNo2 = () => {
     return (
         <div className="text-start container">
             <h1>The Comprehensive Guide to Digital Marketing</h1>
-            <hr />
-            <h2>Introduction to Digital Marketing</h2>
-            <p>Digital marketing refers to the promotion of products or services through digital channels to reach consumers. This form of marketing utilizes the internet and online-based digital technologies such as desktop computers, mobile phones, and other digital media platforms. As businesses increasingly turn to digital marketing, it has become an essential aspect of any marketing strategy.</p>
-
-            <p>One of the key benefits of digital marketing is its ability to reach a global audience. Unlike traditional marketing methods, which may have geographical limitations, digital marketing can reach consumers all around the world. This is particularly advantageous for small businesses that may not have the resources to engage in large-scale advertising campaigns.</p>
-
-            <p>Another significant advantage is the cost-effectiveness of digital marketing. Many digital marketing strategies, such as social media marketing and content marketing, can be implemented at a relatively low cost compared to traditional advertising. This allows businesses of all sizes to compete in the digital marketplace without a substantial financial investment.</p>
             <div>
                 <AdComponent adKey="f2e76b1a9af84306102d9f8675c030e8" />
                 <div id="container-f2e76b1a9af84306102d9f8675c030e8"></div>
@@ -127,6 +120,14 @@ const PageNo2 = () => {
                 </a>
             </div>
             {/* Direct Link Ads */}
+            <hr />
+            <h2>Introduction to Digital Marketing</h2>
+            <p>Digital marketing refers to the promotion of products or services through digital channels to reach consumers. This form of marketing utilizes the internet and online-based digital technologies such as desktop computers, mobile phones, and other digital media platforms. As businesses increasingly turn to digital marketing, it has become an essential aspect of any marketing strategy.</p>
+
+            <p>One of the key benefits of digital marketing is its ability to reach a global audience. Unlike traditional marketing methods, which may have geographical limitations, digital marketing can reach consumers all around the world. This is particularly advantageous for small businesses that may not have the resources to engage in large-scale advertising campaigns.</p>
+
+            <p>Another significant advantage is the cost-effectiveness of digital marketing. Many digital marketing strategies, such as social media marketing and content marketing, can be implemented at a relatively low cost compared to traditional advertising. This allows businesses of all sizes to compete in the digital marketplace without a substantial financial investment.</p>
+           
             <p>Digital marketing encompasses various tactics, including:</p>
             <ul>
                 <li><strong>Search Engine Optimization (SEO):</strong> The process of optimizing a website to rank higher in search engine results, thereby increasing organic traffic.</li>
