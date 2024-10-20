@@ -10,28 +10,28 @@ const PageNo1 = () => {
     const [isButtonEnabled, setIsButtonEnabled] = useState(false); // Button enable/disable karne ke liye state
     const [statusMessage, setStatusMessage] = useState("Your Link Scanning..."); // Status message ke liye state
     const [linkButtonClicked, setLinkButtonClicked] = useState(false); // Track whether "Get Link" is clicked
-    const [short_data_traker, setShort_data_traker] = useState(false); 
+    const [short_data_traker, setShort_data_traker] = useState(false);
     let id = useParams().id
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-               let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/linkShort/shortURL_first_page_get?shortID=${id}`);
-               if(response.data.msg !== null){
-                   setShort_data_traker(true);
-               }
+                let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/linkShort/shortURL_first_page_get?shortID=${id}`);
+                if (response.data.msg !== null) {
+                    setShort_data_traker(true);
+                }
             } catch (error) {
                 console.error(error);
             }
         };
-    
-        fetchData(); 
+
+        fetchData();
     }, [id]);
 
     useEffect(() => {
         if (short_data_traker) {
             document.getElementById('page_controller').classList.remove("d-none");
-            
+
             // Timer shuru karna
             const timer = setInterval(() => {
                 setSeconds(prev => {
@@ -45,7 +45,7 @@ const PageNo1 = () => {
                     }
                 });
             }, 1000);
-    
+
             // Cleanup function
             return () => clearInterval(timer);
         } else {
@@ -62,7 +62,7 @@ const PageNo1 = () => {
                 console.error(error);
             }
         };
-    
+
         fetchData();
     };
 
@@ -100,13 +100,17 @@ const PageNo1 = () => {
                         <li><strong>Brand Credibility:</strong> A professional-looking website helps build trust and credibility.</li>
                         <li><strong>Global Reach:</strong> Effective web development enables companies to expand their market reach.</li>
                     </ul>
+                    <div>
+                        <AdComponent adKey="f2e76b1a9af84306102d9f8675c030e8" />
+                        <div id="container-f2e76b1a9af84306102d9f8675c030e8"></div>
+                    </div>
                     <div id='page_controller' className="text-center">
                         <nav className="top">
                             <p className='fs-4'><b>Your current step 1 / 3</b></p>
                         </nav>
                         <div id="tp-wait1">
                             <div className="tp-time">
-                                <span id="countdown" style={{ fontSize: '19px', color: '#69aaff', fontWeight: 'bold' }}>
+                                <span id="countdown" style={{ fontSize: '30px', color: '#69aaff', fontWeight: 'bold' }}>
                                     Wait <span id="tp-time">{seconds}</span> s
                                 </span>
                             </div>
@@ -115,7 +119,7 @@ const PageNo1 = () => {
                             </p>
                         </div>
                         <button
-                            className="btn btn-primary my-3"
+                            className="btn btn-primary mb-5 fs-5 w-100"
                             style={{ backgroundColor: '#0f146b' }}
                             onClick={handleGetLinkClick}
                             disabled={!isButtonEnabled}
@@ -123,6 +127,19 @@ const PageNo1 = () => {
                             <a style={{ textDecoration: "none", color: "white" }} href="#page1_Scroll_bottom">Get Link</a>
                         </button>
                     </div>
+                    {/* Banner Ads 300X100 */}
+                    <div className='d-flex justify-content-center' data-banner-id="6037162"></div>
+                    {/* Banner Ads 300X100 */}
+                    {/* Direct Link Ads */}
+                    <div className='d-flex justify-content-center'>
+                        <a className='d-flex justify-content-center w-100' href="https://bycarver.com/nnwrv5ztgk?key=115124ac92e9fd26b74eabc48c298b1b">
+                            <img src="/click-here-gif-button.gif" style={{ width: "400px" }} alt="Click Here" className='mt-3' />
+                        </a>
+                    </div>
+                    {/* Direct Link Ads */}
+                    {/* Horizontal Adaptive Banner Onclicka */}
+                    <div data-banner-id="6031734"></div>
+                    {/* Horizontal Adaptive Banner Onclicka */}
                     <p><strong>Key Areas of Web Development</strong></p>
                     <p>Web development can be broadly categorized into three main areas:</p>
                     <ul>
@@ -260,19 +277,50 @@ const PageNo1 = () => {
                 </div>
             </div>
 
+            {/* Banner Ads 300X250 */}
+            <div className='d-flex justify-content-center' data-banner-id="6037160"></div>
+            {/* Banner Ads 300X250 */}
+            <p>In conclusion, the journey of digital marketing is ongoing, requiring continuous learning and adaptation. By leveraging the tools and strategies discussed, businesses can effectively engage with their audience, drive growth, and achieve their marketing goals. Embrace the opportunities presented by digital marketing, and watch your business flourish in the digital age.</p>
             {/* Conditionally render the "Click here to continue" button */}
             {linkButtonClicked && (
-                <div className='text-center'>
+                <div className='text-center d-none d-md-block'>
                     <a
-                        id='page1_Scroll_bottom'
                         href={`/2/${id}`}
-                        className="btn btn-primary my-3"
+                        className="btn btn-primary text-center mt-5 fs-5 w-100"
                         style={{ backgroundColor: '#0f146b' }}
                     >
                         Click here to continue
                     </a>
                 </div>
             )}
+            {/* Conditionally render the "Click here to continue" button */}
+            {/* Banner Ads 300X600 */}
+            <div id='page1_Scroll_bottom' className='d-flex justify-content-center align-items-center flex-wrap'>
+                <div data-banner-id="6038543"></div>
+                {/* Direct Link Ads */}
+                <div className='d-flex justify-content-center'>
+                    <a className='d-flex justify-content-center align-items-center flex-column w-100' href="https://bycarver.com/fhp0is9j?key=20050f2539da92b9243bbc662b5c12bf">
+                        <img src="/click-here.gif" style={{ width: "170px" }} alt="Click Here" />
+                        <img src="/download-now.gif" style={{ width: "400px" }} alt="Click Here" className='mb-5' />
+                    </a>
+                </div>
+                {/* Direct Link Ads */}
+                {/* Conditionally render the "Click here to continue" button */}
+                {linkButtonClicked && (
+                    <div className='text-center d-md-none'>
+                        <a
+                            href={`/2/${id}`}
+                            className="btn btn-primary text-center mt-5 fs-5 w-100"
+                            style={{ backgroundColor: '#0f146b' }}
+                        >
+                            Click here to continue
+                        </a>
+                    </div>
+                )}
+                {/* Conditionally render the "Click here to continue" button */}
+                <div data-banner-id="6038539"></div>
+            </div>
+            {/* Banner Ads 300X600 */}
         </div>
     );
 }
