@@ -13,7 +13,7 @@ const HiddenLinks = () => {
     let [unhide_process_state, setUnhide_process_state] = useState(true)
 
     function getUserData(data) {
-        setUserData(data);
+        setUserData(data[0]);
     }
 
     useEffect(() => {

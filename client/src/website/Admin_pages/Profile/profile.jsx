@@ -27,18 +27,18 @@ const Profile = () => {
   const dataBase_home_get = async () => {
     try {
       let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/home_dataBase_get?jwtToken=${jwtToken_state}`);
-      setUserData(response.data.userData);
-      if (response.data.userData) {
+      setUserData(response.data.userData[0]);
+      if (response.data.userData[0]) {
         setFormData({
-          name: response.data.userData.name || '',
-          address: response.data.userData.address || '',
-          city: response.data.userData.city || '',
-          place_state: response.data.userData.place_state || '',
-          zip_code: response.data.userData.zip_code || '',
-          country: response.data.userData.country || '',
-          mobile_number: response.data.userData.mobile_number || '',
-          withdrawal_method: response.data.userData.withdrawal_method || '',
-          withdrawal_account_information: response.data.userData.withdrawal_account_information || '',
+          name: response.data.userData[0].name || '',
+          address: response.data.userData[0].address || '',
+          city: response.data.userData[0].city || '',
+          place_state: response.data.userData[0].place_state || '',
+          zip_code: response.data.userData[0].zip_code || '',
+          country: response.data.userData[0].country || '',
+          mobile_number: response.data.userData[0].mobile_number || '',
+          withdrawal_method: response.data.userData[0].withdrawal_method || '',
+          withdrawal_account_information: response.data.userData[0].withdrawal_account_information || '',
         });
       }
     } catch (error) {
@@ -105,7 +105,6 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', formData);
     dataBase_profile_update_patch(formData)
     setSubmit_process_state(false);
   };

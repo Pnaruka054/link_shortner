@@ -71,7 +71,7 @@ const HomePageAdmin = (props) => {
               </Link>
             </div>
             <div className="col-lg-10 col-md-9 col-12 p-0">
-              <NavBarAdmin userData={userData} />
+              <NavBarAdmin userData={userData[0]} />
             </div>
           </div>
 

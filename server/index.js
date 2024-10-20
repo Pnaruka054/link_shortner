@@ -10,10 +10,13 @@ const short_urlRoutes = require("./routes/short_urlRoutes")
 const cors = require('cors')
 const PORT = process.env.PORT
 const bodyParser = require("body-parser");
+const insert_month_date_records = require("./controller/userLink_statusController")
 
 app.use(cors())
 app.use(bodyParser.json());
 app.use(express.json())
+
+insert_month_date_records()
 
 async function modelCalled() {
    try {

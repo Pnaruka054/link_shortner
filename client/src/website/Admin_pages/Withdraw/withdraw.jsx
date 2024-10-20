@@ -16,11 +16,11 @@ const Withdraw = () => {
     let [submit_process_state, setSubmit_process_state] = useState(true)
 
     function getUserData(data) {
-        setUserData(data);
-        setBalance(data.available_amount);
-        setPendingWithdraw(data.pending_withdrawal_amount);
-        setTotalWithdraw(data.total_withdrawal_amount);
-        setUserID_DB_state(data._id)
+        setUserData(data[0]);
+        setBalance(data[0].available_amount);
+        setPendingWithdraw(data[0].pending_withdrawal_amount);
+        setTotalWithdraw(data[0].total_withdrawal_amount);
+        setUserID_DB_state(data[0]._id)
     }
 
     const getCurrentTime = async () => {

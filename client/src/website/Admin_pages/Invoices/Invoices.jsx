@@ -12,8 +12,8 @@ const Invoices = () => {
     const [withdrawal_records_state, setWithdrawal_records_state] = useState([]);
    
     function getUserData(data) {
-        setUserData(data);
-        setUserID_DB_state(data._id)
+        setUserData(data[0]);
+        setUserID_DB_state(data[0]._id)
     }
     
     const dataBase_user_withdrawal_record_get = async () => {

@@ -19,7 +19,7 @@ const ChangeEmail = () => {
     try {
       let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/home_dataBase_get?jwtToken=${jwtToken_state}`);
       if (response.data.userData) {
-        setCurrentEmail(response.data.userData.gmail_address)
+        setCurrentEmail(response.data.userData[0].gmail_address)
       }
     } catch (error) {
       console.error(error);

@@ -10,7 +10,7 @@ const Referrals = () => {
     const linksPerPage = 10;
 
     function getUserData(data) {
-        setUserData(data);
+        setUserData(data[0]);
     }
 
     const dataBase_referral_record_get = async () => {

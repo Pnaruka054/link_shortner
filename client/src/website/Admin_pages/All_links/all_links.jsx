@@ -13,7 +13,7 @@ const AllLinks = () => {
     let [hide_process_state, setHide_process_state] = useState(true)
 
     function getUserData(data) {
-        setUserData(data);
+        setUserData(data[0]);
     }
 
     useEffect(() => {

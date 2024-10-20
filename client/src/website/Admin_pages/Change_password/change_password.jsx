@@ -14,7 +14,7 @@ const ChangePassword = () => {
   const jwtToken_state = localStorage.getItem('jwtToken_state');
 
   function getUserData(data) {
-    setUserData(data);
+    setUserData(data[0]);
   }
 
   const handleChangePassword = async (e) => {

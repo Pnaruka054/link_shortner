@@ -9,6 +9,10 @@ const jwt = require('jsonwebtoken')
 const referral_records = require("../model/referrals_records")
 const oauth2Client = require("../helper/oauth2Client")
 const axios = require('axios');
+const userMonthly_records = require("../model/userMonthlyRecords");
+const userDate_records = require('../model/userDateRecords');
+const insert_month_date_records = require("../controller/userLink_statusController")
+
 
 let otpMail_send = async (name, gmail, id) => {
     try {
@@ -89,6 +93,7 @@ const user_signUp = async (req, res) => {
             msg: 'Register successfully!',
             user: userModel_data
         })
+        insert_month_date_records()
     } catch (error) {
         res.status(400).json({
             success: false,
@@ -117,13 +122,14 @@ const user_signUp_login_google = async (req, res) => {
 
         const isExists = await user_signUp_data.findOne({ gmail_address: email })
         if (isExists) {
-        if (isExists.google_id.length == 0) {
-           return res.status(400).json({
-                success: false,
-                error_msg: "Please Login With Password"
-            })
-        }}
-       
+            if (isExists.google_id.length == 0) {
+                return res.status(400).json({
+                    success: false,
+                    error_msg: "Please Login With Password"
+                })
+            }
+        }
+
         let userData = {
             name,
             gmail_address: email,
@@ -157,7 +163,7 @@ const user_signUp_login_google = async (req, res) => {
                 refer_by: referral_id_signup
             };
         }
-        
+
         let jwt_token;
         if (!isExists) {
             const user_data = new user_signUp_data(userData)
@@ -166,7 +172,8 @@ const user_signUp_login_google = async (req, res) => {
         } else {
             jwt_token = jwt_accessToken(isExists)
         }
-      
+
+        insert_month_date_records()
         return res.status(200).json({
             success: true,
             jwtToken_msg: jwt_token
@@ -438,13 +445,16 @@ const userLogin = async (req, res) => {
 
 const userHome_dataBase_get = async (req, res) => {
     try {
-        userData = req.user
-        user_gmail_address = userData.gmail_address
-        let user_new_Data = await user_signUp_data.findOne({ gmail_address: user_gmail_address })
+        userData = req.user;
+        let user_gmail_address = userData.gmail_address;
+        let user_new_Data = await user_signUp_data.findOne({ gmail_address: user_gmail_address });
+        let user_month_records = await userMonthly_records.find({ userDB_ID: user_new_Data._id.toString() });
+       
+        let user_date_records = await userDate_records.find({ userDB_ID: user_new_Data._id });
         return res.status(200).json({
             success: true,
-            userData: user_new_Data
-        })
+            userData: [user_new_Data, user_month_records, user_date_records]
+        });
     } catch (error) {
         return res.status(404).json({
             success: false,

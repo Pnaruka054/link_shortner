@@ -5,28 +5,51 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Statistics = () => {
-    const [selectedMonth, setSelectedMonth] = useState("September 2024");
+    let month=["January","February","March","April","May","June","July","August","September","October","November","December"]
+    let month_get = new Date().getMonth()
+    let year_get = new Date().getFullYear()
+    const [selectedMonth, setSelectedMonth] = useState(`${month[month_get]} ${year_get}`);
     const [isOpen, setIsOpen] = useState(false);
     const [confirmationVisible, setConfirmationVisible] = useState(false);
     const [shortenedUrlVisible, setShortenedUrlVisible] = useState(false);
-    const [shortenedUrl, setShortenedUrl] = useState('');
-    const [userData, setUserData] = useState(null);
+    const [shortenedUrl, setShortenedUrl] = useState(null);
+    const [userData, setUserData] = useState([]);
+    const [dbMonthGet, setDbMonthGet] = useState([]);
+    const [dbYearGet, setDbYearGet] = useState([]);
     let [submit_process_state, setSubmit_process_state] = useState(true)
     let [short_btn_desable_state, setShort_btn_desable_state] = useState(true)
     let [logOut_btn_process_state, setLogOut_btn_process_state] = useState(true)
     const [error, setError] = useState('');
-    let navigate = useNavigate();
+    let navigate = useNavigate();   
+    
+    useEffect(() => {
+        if (userData && Array.isArray(userData[1])) {
+            let userStatus = userData[1].find((value) => {
+                return selectedMonth === value.monthName;
+            });
+            setDbMonthGet(userStatus)
+        }
+        if (userData && Array.isArray(userData[2])) {
+            let userStatus = userData[2].map((value) => {
+                if(selectedMonth === value.monthName){
+                    return value
+                }
+            });
+            setDbYearGet(userStatus)
+        }
+    }, [userData, selectedMonth]);
+    
 
     function getUserData(data) {
         setUserData(data);
-        if (data.is_verified === 0) {
+        if (data[0].is_verified === 0) {
             let check_email_verify_error_div = document.getElementById("check_email_verify_error_div")
             check_email_verify_error_div.classList.remove("d-none")
         }
     }
 
     const handleVerifyClick = () => {
-        sessionStorage.setItem('gmail_id', userData.gmail_address);
+        sessionStorage.setItem('gmail_id', userData[0].gmail_address);
         navigate("/verify")
     };
 
@@ -60,18 +83,6 @@ const Statistics = () => {
         }
     }
 
-    const months = [
-        { value: "2024-10", label: "September 2024" },
-        { value: "2024-09", label: "August 2024" },
-        { value: "2024-08", label: "July 2024" },
-        { value: "2024-07", label: "June 2024" },
-        { value: "2024-06", label: "May 2024" },
-        { value: "2024-05", label: "April 2024" },
-        { value: "2024-04", label: "March 2024" },
-        { value: "2024-03", label: "February 2024" },
-        { value: "2024-02", label: "January 2024" },
-        { value: "2024-01", label: "December 2024" },
-    ];
     const data = [
         { date: '2024-10-01', views: 0, linkEarnings: '$0.0000', dailyCPM: 0, referralEarnings: '$0.0000' },
         { date: '2024-10-02', views: 2, linkEarnings: '$0.0250', dailyCPM: 12.5, referralEarnings: '$0.0000' },
@@ -108,8 +119,8 @@ const Statistics = () => {
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
-    const handleSelect = (value, label) => {
-        setSelectedMonth(label);
+    const handleSelect = (monthName) => {
+        setSelectedMonth(monthName);
         setIsOpen(false);
     };
 
@@ -119,7 +130,7 @@ const Statistics = () => {
         const formattedDate = formatDate(now);
 
         let obj = {
-            userID_DB: userData._id,
+            userID_DB: userData[0]._id,
             longURL: e.target.urlInput.value,
             alias: e.target.aliasInput.value,
             date: formattedDate,
@@ -237,13 +248,13 @@ const Statistics = () => {
                         </button>
                         {isOpen && (
                             <div className="dropdown-menu show w-75 z-1">
-                                {months.map((month) => (
+                                {userData[1].map((month) => (
                                     <button
-                                        key={month.value}
+                                        key={month.monthName}
                                         className="dropdown-item"
-                                        onClick={() => handleSelect(month.value, month.label)}
+                                        onClick={() => handleSelect(month.monthName)}
                                     >
-                                        {month.label}
+                                        {month.monthName}
                                     </button>
                                 ))}
                             </div>
@@ -255,7 +266,7 @@ const Statistics = () => {
                     <div className="col-lg-3 col-md-6 col-6 text-nowrap">
                         <div className="small-box bg-yellow">
                             <div className="inner">
-                                <h3>2</h3>
+                                <h3>{dbMonthGet.total_views}</h3>
                                 <p>Total Views</p>
                             </div>
                             <div className="icon">
@@ -266,7 +277,7 @@ const Statistics = () => {
                     <div className="col-lg-3 col-md-6 col-6 text-nowrap">
                         <div className="small-box bg-aqua">
                             <div className="inner">
-                                <h3>$0.0250</h3>
+                                <h3>${(+dbMonthGet.total_earnings).toFixed(4)}</h3>
                                 <p>Total Earnings</p>
                             </div>
                             <div className="icon">
@@ -277,7 +288,7 @@ const Statistics = () => {
                     <div className="col-lg-3 col-md-6 col-6 text-nowrap">
                         <div className="small-box bg-green">
                             <div className="inner">
-                                <h3>$0.0000</h3>
+                                <h3>${(+dbMonthGet.referral_earnings).toFixed(4)}</h3>
                                 <p>Referral Earnings</p>
                             </div>
                             <div className="icon">
@@ -288,7 +299,7 @@ const Statistics = () => {
                     <div className="col-lg-3 col-md-6 col-6 text-nowrap">
                         <div className="small-box bg-red">
                             <div className="inner">
-                                <h3>$12.5000</h3>
+                                <h3>${(+dbMonthGet.averageCPM).toFixed(4)}</h3>
                                 <p>Average CPM</p>
                             </div>
                             <div className="icon">
@@ -386,13 +397,13 @@ const Statistics = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((row, index) => (
+                                {dbYearGet.map((row, index) => (
                                     <tr key={index}>
                                         <td>{row.date}</td>
                                         <td>{row.views}</td>
-                                        <td>{row.linkEarnings}</td>
+                                        <td>{(+row.publisher_earnings).toFixed(4)}</td>
                                         <td>${row.dailyCPM}</td>
-                                        <td>{row.referralEarnings}</td>
+                                        <td>{(+row.referral_earnings).toFixed(4)}</td>
                                     </tr>
                                 ))}
                             </tbody>
