@@ -122,7 +122,7 @@ const PageNo2 = () => {
             {/* Banner Ads 300X100 */}
             {/* Direct Link Ads */}
             <div className='d-flex justify-content-center'>
-                <a className='d-flex justify-content-center w-100' href="https://bycarver.com/nnwrv5ztgk?key=115124ac92e9fd26b74eabc48c298b1b">
+                <a className='d-flex justify-content-center w-100' href="https://bycarver.com/nnwrv5ztgk?key=115124ac92e9fd26b74eabc48c298b1b" target="_blank" rel="noopener noreferrer">
                     <img src="/click-here-gif-button.gif" style={{ width: "400px" }} alt="Click Here" className='mt-3' />
                 </a>
             </div>
@@ -180,7 +180,7 @@ const PageNo2 = () => {
             </div>}
             {/* Direct Link Ads */}
             <div className='d-flex justify-content-center'>
-                <a className='d-flex justify-content-center align-items-center flex-column w-100' href="https://bycarver.com/q5jtvigi?key=6ce245352a591a2584abf7a89393e668">
+                <a className='d-flex justify-content-center align-items-center flex-column w-100' href="https://bycarver.com/q5jtvigi?key=6ce245352a591a2584abf7a89393e668" target="_blank" rel="noopener noreferrer">
                     <img src="/click-here.gif" style={{ width: "170px" }} alt="Click Here" />
                     <img src="/click-here-gif-button.gif" style={{ width: "400px" }} alt="Click Here" className='mb-5' />
                 </a>
@@ -306,7 +306,7 @@ const PageNo2 = () => {
                 <div data-banner-id="6038543"></div>
                 {/* Direct Link Ads */}
                 <div className='d-flex justify-content-center'>
-                    <a className='d-flex justify-content-center align-items-center flex-column w-100' href="https://bycarver.com/fhp0is9j?key=20050f2539da92b9243bbc662b5c12bf">
+                    <a className='d-flex justify-content-center align-items-center flex-column w-100' href="https://bycarver.com/fhp0is9j?key=20050f2539da92b9243bbc662b5c12bf" target="_blank" rel="noopener noreferrer">
                         <img src="/click-here.gif" style={{ width: "170px" }} alt="Click Here" />
                         <img src="/download-now.gif" style={{ width: "400px" }} alt="Click Here" className='mb-5' />
                     </a>
