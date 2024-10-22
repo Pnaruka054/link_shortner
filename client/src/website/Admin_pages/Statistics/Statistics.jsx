@@ -3,9 +3,10 @@ import "./Statistics.css";
 import HomePageAdmin from "../Home_page_admin/home_page_admin";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import LoadingPage from "../../Loading_page/loading_page";
 
 const Statistics = () => {
-    let month=["January","February","March","April","May","June","July","August","September","October","November","December"]
+    let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     let month_get = new Date().getMonth()
     let year_get = new Date().getFullYear()
     const [selectedMonth, setSelectedMonth] = useState(`${month[month_get]} ${year_get}`);
@@ -13,15 +14,15 @@ const Statistics = () => {
     const [confirmationVisible, setConfirmationVisible] = useState(false);
     const [shortenedUrlVisible, setShortenedUrlVisible] = useState(false);
     const [shortenedUrl, setShortenedUrl] = useState(null);
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState('');
     const [dbMonthGet, setDbMonthGet] = useState([]);
     const [dbYearGet, setDbYearGet] = useState([]);
     let [submit_process_state, setSubmit_process_state] = useState(true)
     let [short_btn_desable_state, setShort_btn_desable_state] = useState(true)
     let [logOut_btn_process_state, setLogOut_btn_process_state] = useState(true)
     const [error, setError] = useState('');
-    let navigate = useNavigate();   
-    
+    let navigate = useNavigate();
+
     useEffect(() => {
         if (userData && Array.isArray(userData[1])) {
             let userStatus = userData[1].find((value) => {
@@ -31,14 +32,14 @@ const Statistics = () => {
         }
         if (userData && Array.isArray(userData[2])) {
             let userStatus = userData[2].map((value) => {
-                if(selectedMonth === value.monthName){
+                if (selectedMonth === value.monthName) {
                     return value
                 }
             });
             setDbYearGet(userStatus)
         }
     }, [userData, selectedMonth]);
-    
+
 
     function getUserData(data) {
         setUserData(data);
@@ -180,7 +181,7 @@ const Statistics = () => {
                     {error.length > 0 && <div className="alert alert-danger"></div>}
                 </div>
                 <div id="check_email_verify_error_div" className="alert alert-warning alert-dismissible fade show d-none" role="alert">
-                <i className="fa-solid fa-triangle-exclamation"></i> Your email is not verified -
+                    <i className="fa-solid fa-triangle-exclamation"></i> Your email is not verified -
                     <span style={{ textDecoration: "underline", color: "blue", cursor: "pointer" }} onClick={handleVerifyClick}>
                         click here
                     </span>

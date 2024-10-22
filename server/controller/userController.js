@@ -85,14 +85,14 @@ const user_signUp = async (req, res) => {
         const user_data = new user_signUp_data(userData)
         const userModel_data = await user_data.save()
 
-        otpMail_send(userModel_data.name, userModel_data.gmail_address, userModel_data._id)
+        await createCurrentMonthDocument()
 
+        otpMail_send(userModel_data.name, userModel_data.gmail_address, userModel_data._id)
         res.status(200).json({
             success: true,
             msg: 'Register successfully!',
             user: userModel_data
         })
-        createCurrentMonthDocument()
     } catch (error) {
         res.status(400).json({
             success: false,
@@ -172,7 +172,7 @@ const user_signUp_login_google = async (req, res) => {
             jwt_token = jwt_accessToken(isExists)
         }
 
-        createCurrentMonthDocument()
+        await createCurrentMonthDocument()
         return res.status(200).json({
             success: true,
             jwtToken_msg: jwt_token

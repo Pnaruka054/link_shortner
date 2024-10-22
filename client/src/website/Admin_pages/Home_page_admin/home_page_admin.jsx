@@ -18,7 +18,7 @@ const HomePageAdmin = (props) => {
       setUserData(response.data.userData);
     } catch (error) {
       console.error(error);
-      if (error.response.data.jwtToken_message) {
+      if (error.response.data) {
         localStorage.removeItem('jwtToken_state');
         setUserData(null);
       }
