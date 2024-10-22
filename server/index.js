@@ -10,13 +10,16 @@ const short_urlRoutes = require("./routes/short_urlRoutes")
 const cors = require('cors')
 const PORT = process.env.PORT
 const bodyParser = require("body-parser");
-const insert_month_date_records = require("./controller/userLink_statusController")
+const {createCurrentMonthDocument} = require("./controller/userLink_statusController")
 
 app.use(cors())
 app.use(bodyParser.json());
 app.use(express.json())
 
-insert_month_date_records()
+cron.schedule('0 0 1 * *', () => {
+    createCurrentMonthDocument();
+    console.log('Monthly check for document creation executed');
+})
 
 async function modelCalled() {
    try {

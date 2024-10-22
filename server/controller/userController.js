@@ -11,7 +11,7 @@ const oauth2Client = require("../helper/oauth2Client")
 const axios = require('axios');
 const userMonthly_records = require("../model/userMonthlyRecords");
 const userDate_records = require('../model/userDateRecords');
-const insert_month_date_records = require("../controller/userLink_statusController")
+const {createCurrentMonthDocument} = require("../controller/userLink_statusController")
 
 
 let otpMail_send = async (name, gmail, id) => {
@@ -28,7 +28,6 @@ let otpMail_send = async (name, gmail, id) => {
 let jwt_accessToken = (user) => {
     return jwt.sign({ jwtUser: user }, process.env.JWT_ACCESS_KEY, { expiresIn: '59m' })
 }
-
 
 const user_signUp = async (req, res) => {
     try {
@@ -93,7 +92,7 @@ const user_signUp = async (req, res) => {
             msg: 'Register successfully!',
             user: userModel_data
         })
-        insert_month_date_records()
+        createCurrentMonthDocument()
     } catch (error) {
         res.status(400).json({
             success: false,
@@ -173,7 +172,7 @@ const user_signUp_login_google = async (req, res) => {
             jwt_token = jwt_accessToken(isExists)
         }
 
-        insert_month_date_records()
+        createCurrentMonthDocument()
         return res.status(200).json({
             success: true,
             jwtToken_msg: jwt_token
