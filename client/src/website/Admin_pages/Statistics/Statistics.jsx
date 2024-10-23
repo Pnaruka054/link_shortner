@@ -3,7 +3,6 @@ import "./Statistics.css";
 import HomePageAdmin from "../Home_page_admin/home_page_admin";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import LoadingPage from "../../Loading_page/loading_page";
 
 const Statistics = () => {
     let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -43,6 +42,7 @@ const Statistics = () => {
 
     function getUserData(data) {
         setUserData(data);
+        console.log(data);
         if (data[0].is_verified === 0) {
             let check_email_verify_error_div = document.getElementById("check_email_verify_error_div")
             check_email_verify_error_div.classList.remove("d-none")
