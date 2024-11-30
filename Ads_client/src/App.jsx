@@ -5,7 +5,7 @@ import PageNo2 from './website/Page_no_2/Page_no_2'
 import PageNo3 from './website/Page_no_3/Page_no_3'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
+function App() { 
 
   return (
     <BrowserRouter>
