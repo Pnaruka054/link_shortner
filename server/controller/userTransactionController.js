@@ -27,8 +27,8 @@ let current_time_get = async(req, res) => {
 
 let user_withdrawal_record_get = async(req, res) => {
     try {
-        let userID_DB = req.query.userID_DB
-        let withdrawal_records = await user_withdrawal_records.find({userID_DB})
+        let userDB_id = req.query.userDB_id
+        let withdrawal_records = await user_withdrawal_records.find({userDB_id})
         res.status(200).json({
             success:true,
             msg: withdrawal_records
@@ -73,7 +73,7 @@ let withdrawal_country_get = async(req,res) =>{
 
 let withdrawal_record_post = async(req,res) =>{
     try {
-        const { status, publisher_earnings, referral_earnings, total_amount,date, withdrawal_method, withdrawal_account, userID_DB, total_withdrawal_amount, pending_withdrawal_amount } = req.body;
+        const { status, publisher_earnings, referral_earnings, total_amount,date, withdrawal_method, withdrawal_account, userDB_id, total_withdrawal_amount, pending_withdrawal_amount } = req.body;
         
         if(withdrawal_method === ''){
             return res.status(400).json({
@@ -110,7 +110,7 @@ let withdrawal_record_post = async(req,res) =>{
             total_amount, 
             withdrawal_method, 
             withdrawal_account, 
-            userID_DB 
+            userDB_id 
         })
 
         let new_withdrawl_amount = {
@@ -123,7 +123,7 @@ let withdrawal_record_post = async(req,res) =>{
 
         let withdrawal_record_data = await withdrawal_record.save()
 
-        await user_signUp_data.findByIdAndUpdate(userID_DB,new_withdrawl_amount)
+        await user_signUp_data.findByIdAndUpdate(userDB_id,new_withdrawl_amount)
 
         res.status(200).json({
             success:true,

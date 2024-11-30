@@ -59,15 +59,15 @@ const user_signUp = async (req, res) => {
         };
 
         if (referral_id_signup) {
-            const referred_by_userID_DB = await user_signUp_data.findOne({ userName: referral_id_signup })
-            if (!referred_by_userID_DB) {
+            const referred_by_userDB_id = await user_signUp_data.findOne({ userName: referral_id_signup })
+            if (!referred_by_userDB_id) {
                 return res.status(400).json({
                     success: false,
                     error_msg: 'Your Registration Link is invalid'
                 })
             }
             let referral_recorded_data = new referral_records({
-                userID_DB: referred_by_userID_DB._id,
+                userDB_id: referred_by_userDB_id._id,
                 date,
                 userName: gmail_address.split('@')[0]
             })
@@ -138,15 +138,15 @@ const user_signUp_login_google = async (req, res) => {
         };
 
         if (referral_id_signup !== 'undefined') {
-            const referred_by_userID_DB = await user_signUp_data.findOne({ userName: referral_id_signup })
-            if (!referred_by_userID_DB) {
+            const referred_by_userDB_id = await user_signUp_data.findOne({ userName: referral_id_signup })
+            if (!referred_by_userDB_id) {
                 return res.status(400).json({
                     success: false,
                     error_msg: 'Your Registration Link is invalid'
                 })
             }
             let referral_recorded_data = new referral_records({
-                userID_DB: referred_by_userID_DB._id,
+                userDB_id: referred_by_userDB_id._id,
                 date,
                 userName: email.split('@')[0]
             })
@@ -447,9 +447,9 @@ const userHome_dataBase_get = async (req, res) => {
         userData = req.user;
         let user_gmail_address = userData.gmail_address;
         let user_new_Data = await user_signUp_data.findOne({ gmail_address: user_gmail_address });
-        let user_month_records = await userMonthly_records.find({ userDB_ID: user_new_Data._id.toString() });
+        let user_month_records = await userMonthly_records.find({ userDB_id: user_new_Data._id.toString() });
        
-        let user_date_records = await userDate_records.find({ userDB_ID: user_new_Data._id });
+        let user_date_records = await userDate_records.find({ userDB_id: user_new_Data._id });
         return res.status(200).json({
             success: true,
             userData: [user_new_Data, user_month_records, user_date_records]
@@ -532,8 +532,8 @@ const change_password = async (req, res) => {
 
 const referral_record_get = async (req, res) => {
     try {
-        let userID_DB = req.query.userID_DB
-        let referral_record_get = await referral_records.find({ userID_DB })
+        let userDB_id = req.query.userDB_id
+        let referral_record_get = await referral_records.find({ userDB_id })
         res.status(200).json({
             success: true,
             msg: referral_record_get

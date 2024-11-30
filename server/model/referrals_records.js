@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const referralRecordSchema = new mongoose.Schema({
-    userID_DB: { type: String, require: true },
+    userDB_id: { type: String, require: true },
     date: { type: String, require: true },
     userName: { type: String, require: true },
 })

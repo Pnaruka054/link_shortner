@@ -24,30 +24,33 @@ async function createCurrentMonthDocument() {
     const currentYear = date.getFullYear();
     const monthName = `${currentMonthName} ${currentYear}`; // Format: "January 2024"
 
-    const existingMonth = await userMonthly_records.findOne({ monthName: monthName });
+    const allUsers = await user_signUp_data.find();
+    
+    // Get all userSignUpData object IDs
+    const userIDs = allUsers.map(user => user._id);
 
-    if (!existingMonth) {
-        // Get all userSignUpData object IDs
-        const allUsers = await user_signUp_data.find({}, '_id');
-        const userIDs = allUsers.map(user => user._id);
+    // For each user, check if they already have a record for this month
+    for (let userID of userIDs) {
+        const existingMonth = await userMonthly_records.findOne({ 
+            monthName: monthName, 
+            userDB_id: userID 
+        });
 
-        // Create a new Monthly record for each user
-        for (let userID of userIDs) {
+        // If no record exists for the current month, create a new record
+        if (!existingMonth) {
             const newMonthlyRecord = new userMonthly_records({
-                monthName: monthName, // Updated to include year
-                userDB_ID: userID
+                monthName: monthName, // Include the year in the monthName
+                userDB_id: userID
             });
             await newMonthlyRecord.save();
-        }
 
-        // Create date_records entries for all users, with separate documents for each date
-        const datesOfCurrentMonth = getAllDatesOfCurrentMonth();
-        for (let userID of userIDs) {
+            // Create date_records entries for all users, with separate documents for each date of the current month
+            const datesOfCurrentMonth = getAllDatesOfCurrentMonth();
             for (let date of datesOfCurrentMonth) {
                 const newDateRecord = new userDate_records({
-                    userDB_ID: userID,
+                    userDB_id: userID,
                     date: date,
-                    monthName: monthName // Updated to include year
+                    monthName: monthName // Include the year in the monthName
                 });
                 await newDateRecord.save();
             }

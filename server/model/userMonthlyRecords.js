@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const monthSchema = new mongoose.Schema({
-    userDB_ID: { type: String },
+    userDB_id: { type: String },
     monthName: { type: String },
     total_views: { type: String, default: "0" },
     total_earnings: { type: String, default: "0" },

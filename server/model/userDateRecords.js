@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const monthSchema = new mongoose.Schema({
-    userDB_ID: { type: String },
+    userDB_id: { type: String },
     date: { type: String },
     views: { type: String, default: "0" },
     publisher_earnings: { type: String, default: "0" },
     referral_earnings: { type: String, default: "0" },
-    dailyCPM: { type: String, default: "10" },
+    dailyCPM: { type: String, default: "0" },
     monthName: { type: String },
     createdAt: { type: Date, default: Date.now, expires: '1y' }
 });

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const shortLinks_records_schema = new mongoose.Schema({
-    userID_DB: { type: String, require: true },
+    userDB_id: { type: String, require: true },
     date: { type: String, require: true },
     longURL: { type: String, require: true },
     shortURL_ID: { type: String, require: true },

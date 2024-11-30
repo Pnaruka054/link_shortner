@@ -220,7 +220,7 @@ const Profile = () => {
 
           <legend className='mt-3'>Withdrawal Info</legend>
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-sm-6 order-2 order-md-1">
               <div className="form-group">
                 <label htmlFor="withdrawal_method">Withdrawal Method</label>
                 <select
@@ -237,8 +237,26 @@ const Profile = () => {
                   ))}
                 </select>
               </div>
+              <div className='mt-3' style={{fontSize:"14px"}}>
+                <p>- For Payeer add your Account number. (Example: P123***)</p>
+                <p>- For MM, add phone number.</p>
+                <p>- For OVO, add OVO number.</p>
+                <p>- For DANA, add DANA number.</p>
+                <p>- For bKash, add your bKash number</p>
+                <p>- For Airtm, add your email or Airtm username.</p>
+                <p>- For UPI, add your UPI id</p>
+                <p>- For Paytm, add your phone number</p>
+                <p>- For PayPal, add your email.</p>
+                <p>- For Bitcoin, add your wallet address or Binance account email address.</p>
+                <p>- For USDT, add your USDT wallet address + network name or Binance account email address.</p>
+                <p>- For ShopeePay, add phone number.</p>
+                <p>- For bank transfer add your account holder name, Bank Name and Account number</p>
+                <p>- For bank transfer (India) add your First name, Last name, Account number and IFSC code</p>
+                <p>- For bank transfer (Indonesia) add your Bank Account Number and Bank Name</p>
+                <p>- For Web Money, add your purse. (Example: Z123***)</p>
+              </div>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-6 order-1 order-md-2">
               <table className="table table-hover table-striped" style={{ marginTop: "-2rem" }}>
                 <thead>
                   <tr>

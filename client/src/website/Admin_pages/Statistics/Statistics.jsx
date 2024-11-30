@@ -130,7 +130,7 @@ const Statistics = () => {
         const formattedDate = formatDate(now);
 
         let obj = {
-            userID_DB: userData[0]._id,
+            userDB_id: userData[0]._id,
             longURL: e.target.urlInput.value,
             alias: e.target.aliasInput.value,
             date: formattedDate,

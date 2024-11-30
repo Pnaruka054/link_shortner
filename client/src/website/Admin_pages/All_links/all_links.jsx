@@ -20,7 +20,7 @@ const AllLinks = () => {
         if (userData) {
             let fatchData = async () => {
                 try {
-                    let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/linkShort/get_all_links?userID_DB=${userData._id}&link_status=show`);
+                    let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/linkShort/get_all_links?userDB_id=${userData._id}&link_status=show`);
                     setAll_links(response.data.data)
                 } catch (error) {
 

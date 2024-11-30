@@ -10,7 +10,7 @@ const user_withdrawal_records_schema = new mongoose.Schema({
     total_amount: { type: String, require: true },
     withdrawal_method: { type: String, require: true },
     withdrawal_account: { type: String, require: true },
-    userID_DB: { type: String, require: true },
+    userDB_id: { type: String, require: true },
     withdrawal_paid_date: { type: String, require: true, default:"N/A" },
     description: { type: String, require: true, default:"N/A" }
 })
