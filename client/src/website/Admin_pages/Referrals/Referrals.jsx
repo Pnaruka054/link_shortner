@@ -16,7 +16,7 @@ const Referrals = () => {
     const dataBase_referral_record_get = async () => {
         if (!userData) return; 
         try {
-            let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/referral_record_get?userID_DB=${userData._id}`);
+            let response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/referral_record_get?userDB_id=${userData._id}`);
             setReferral_records(response.data.msg);
         } catch (error) {
             console.log(error);
