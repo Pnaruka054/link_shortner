@@ -69,22 +69,6 @@ const PageNo1 = () => {
     return (
         <div className="container-fluid" style={{ padding: '20px' }}>
             <div className="row">
-                {/* Left Sidebar for Ads */}
-                <div className="col-md-2 d-none d-md-block">
-                    <div className="ad-box" style={{ border: '1px dashed #ccc', padding: '10px', marginBottom: '20px' }}>
-                        <a href="https://amzn.to/3BStFGT" target="_blank" rel="noopener noreferrer">
-                            <img src="https://m.media-amazon.com/images/I/81oZfzaZr0L.jpg" alt="Mobile Cover" style={{ width: '100%', borderRadius: '8px' }} />
-                            <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Shop Mobile Covers</p>
-                        </a>
-                    </div>
-                    <div className="ad-box" style={{ border: '1px dashed #ccc', padding: '10px', marginBottom: '20px' }}>
-                        <a href="https://www.amazon.in/s?k=best+phone+under+15000" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.etimg.com/thumb/width-200,height-150,imgsize-271402,resizemode-75,msid-113037911/top-trending-products/mobile-phones/best-mobile-phones-under-25000-under-india-for-unbeatable-value-within-budget.jpg" alt="Best Phone Under 15000" style={{ width: '100%', borderRadius: '8px' }} />
-                            <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Best Phone Under 15000</p>
-                        </a>
-                    </div>
-                </div>
-
                 {/* Main Content Area */}
                 <div className="col-md-8 text-start"> {/* Changed text alignment to start */}
                     <h1 className="mb-4">Web Development: A Comprehensive Overview</h1>
@@ -242,38 +226,6 @@ const PageNo1 = () => {
 
                     <p><strong>Conclusion</strong></p>
                     <p>Web development is an ever-evolving field that plays a crucial role in our digital lives. Whether you are looking to build a personal blog or a complex web application, understanding the fundamentals of web development is essential. By staying updated with the latest technologies and trends, you can ensure that your skills remain relevant in this dynamic industry.</p>
-                </div>
-
-                {/* Right Sidebar for Ads */}
-                <div className="col-md-2 d-none d-md-block">
-                    <div className="ad-box" style={{ border: '1px dashed #ccc', padding: '10px', marginBottom: '20px' }}>
-                        <a href="https://amzn.to/3BStFGT" target="_blank" rel="noopener noreferrer">
-                            <img src="https://m.media-amazon.com/images/I/81oZfzaZr0L.jpg" alt="Mobile Cover" style={{ width: '100%', borderRadius: '8px' }} />
-                            <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Shop Mobile Covers</p>
-                        </a>
-                    </div>
-                    <div className="ad-box" style={{ border: '1px dashed #ccc', padding: '10px', marginBottom: '20px' }}>
-                        <a href="https://www.amazon.in/s?k=best+phone+under+15000" target="_blank" rel="noopener noreferrer">
-                            <img src="https://img.etimg.com/thumb/width-200,height-150,imgsize-271402,resizemode-75,msid-113037911/top-trending-products/mobile-phones/best-mobile-phones-under-25000-under-india-for-unbeatable-value-within-budget.jpg" alt="Best Phone Under 15000" style={{ width: '100%', borderRadius: '8px' }} />
-                            <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Best Phone Under 15000</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            {/* Mobile View: Show ads horizontally at the bottom */}
-            <div className="row d-md-none text-start mt-4"> {/* Changed text alignment to start */}
-                <div className="ad-box" style={{ border: '1px dashed #ccc', padding: '10px', marginBottom: '20px' }}>
-                    <a href="https://amzn.to/3BStFGT" target="_blank" rel="noopener noreferrer">
-                        <img src="https://m.media-amazon.com/images/I/81oZfzaZr0L.jpg" alt="Mobile Cover" style={{ width: '100%', borderRadius: '8px' }} />
-                        <p className='mt-3 fs-4' style={{ fontWeight: 'bold' }}>Shop Mobile Covers</p>
-                    </a>
-                </div>
-                <div className="ad-box" style={{ border: '1px dashed #ccc', padding: '10px', marginBottom: '20px' }}>
-                    <a href="https://www.amazon.in/s?k=best+phone+under+15000" target="_blank" rel="noopener noreferrer">
-                        <img src="https://img.etimg.com/thumb/width-200,height-150,imgsize-271402,resizemode-75,msid-113037911/top-trending-products/mobile-phones/best-mobile-phones-under-25000-under-india-for-unbeatable-value-within-budget.jpg" alt="Best Phone Under 15000" style={{ width: '100%', borderRadius: '8px' }} />
-                        <p className='mt-3 fs-4' style={{ fontWeight: 'bold' }}>Best Phone Under 15000</p>
-                    </a>
                 </div>
             </div>
 
