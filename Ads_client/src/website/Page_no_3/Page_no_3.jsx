@@ -64,7 +64,7 @@ const PageNo3 = () => {
         <div className="bg-primary vh-100 d-flex justify-content-center align-items-center">
             <div className="bg-white p-4 rounded shadow text-center">
                 <a
-                    href='https://bycarver.com/fhp0is9j?key=20050f2539da92b9243bbc662b5c12bf'
+                    href='https://zireemilsoude.net/4/8585876'
                     target='_blank'
                     rel="noopener noreferrer"
                     className="btn btn-primary mb-3"
@@ -89,7 +89,7 @@ const PageNo3 = () => {
                 <div className='d-flex justify-content-center' data-banner-id="6037162"></div>
                 {/* Banner Ads 300X100 */}
                 <a
-                    href='https://bycarver.com/fhp0is9j?key=20050f2539da92b9243bbc662b5c12bf'
+                    href='https://zireemilsoude.net/4/8238196'
                     target='_blank'
                     rel="noopener noreferrer"
                     className="btn btn-success"
