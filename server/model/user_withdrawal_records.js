@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { withdrawal_country_get } = require('../controller/userTransactionController')
 
 const user_withdrawal_records_schema = new mongoose.Schema({
     ID: { type: String, require: true, unique: true },
