@@ -256,7 +256,7 @@ const Profile = () => {
                 <p>- For Web Money, add your purse. (Example: Z123***)</p>
               </div>
             </div>
-            <div className="col-sm-6 order-1 order-md-2">
+            <div className="col-sm-6 order-1 mt-5 mt-md-0 order-md-2">
               <table className="table table-hover table-striped" style={{ marginTop: "-2rem" }}>
                 <thead>
                   <tr>
