@@ -68,7 +68,7 @@ const PageNo1 = () => {
 
     return (
         <div className="container-fluid" style={{ padding: '20px' }}>
-            <div className="row">
+            <div className="row d-flex justify-content-center">
                 {/* Main Content Area */}
                 <div className="col-md-8 text-start"> {/* Changed text alignment to start */}
                     <h1 className="mb-4">Web Development: A Comprehensive Overview</h1>
@@ -232,7 +232,6 @@ const PageNo1 = () => {
             {/* Banner Ads 300X250 */}
             <div className='d-flex justify-content-center' data-banner-id="6037160"></div>
             {/* Banner Ads 300X250 */}
-            <p>In conclusion, the journey of digital marketing is ongoing, requiring continuous learning and adaptation. By leveraging the tools and strategies discussed, businesses can effectively engage with their audience, drive growth, and achieve their marketing goals. Embrace the opportunities presented by digital marketing, and watch your business flourish in the digital age.</p>
             {/* Conditionally render the "Click here to continue" button */}
             {linkButtonClicked && (
                 <div className='text-center d-none d-md-block'>
