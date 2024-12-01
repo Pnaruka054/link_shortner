@@ -30,10 +30,8 @@ const Statistics = () => {
             setDbMonthGet(userStatus)
         }
         if (userData && Array.isArray(userData[2])) {
-            let userStatus = userData[2].map((value) => {
-                if (selectedMonth === value.monthName) {
-                    return value
-                }
+            let userStatus = userData[2].filter((value) => {
+                return selectedMonth === value.monthName
             });
             setDbYearGet(userStatus)
         }
