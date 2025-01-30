@@ -93,7 +93,7 @@ const Login = () => {
   };
 
   const googleLogin = useGoogleLogin({
-    onSuccess: responseGoogle,
+    onSuccess: responseGoogle, 
     onError: responseGoogle,
     flow: "auth-code",
   });
