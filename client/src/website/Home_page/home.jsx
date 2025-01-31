@@ -4,7 +4,7 @@ import Faq from "../FAQ/faq";
 import ContactUs from "../ContactUs/contactUs";
 import Nav_Bar from "../Nav_Bar/nav_bar";
 import Footer from "../Footer/footer";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useEffect } from "react";
 
 const Home = () => {
@@ -39,7 +39,7 @@ const Home = () => {
                   required
                 />
                 <span>
-                  <Link to={dashboard? '/member/dashboard': '/signup'}>
+                  <Link to={dashboard ? '/member/dashboard' : '/signup'}>
                     <i className="fa-sharp fa-solid fa-right-to-bracket"></i>
                   </Link>
                 </span>
@@ -76,6 +76,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <iframe scrolling="no" src="https://neon.today/context/get/69364/37364/1/468/60" style={{ width: "468px", height: "60px", padding: "0px", border: "1px dotted gray" }} frameborder="0"></iframe>
       <div className="container d-flex justify-content-evenly align-items-center">
         <div id="home_three_section" className="row fs-5 text-primary mt-5">
           <div className="col text-center">
